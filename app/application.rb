@@ -21,11 +21,11 @@ class Application
         resp.write "#{item}\n"
       end
     elsif req.path.match(/add/)
-      item = req.params["q"]
+      add_item = req.params["item"]
       # item.each do |x| 
-        if @@items.include?(item)
-           @@cart.push(item)
-           resp.write "added #{item}"
+        if @@items.include?(add_item)
+           @@cart.push(add_item)
+           resp.write "added #{add_item}"
         else 
           resp.write "We don't have that item"
         end
